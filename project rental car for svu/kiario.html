@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car rental </title>
+    <title>image gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="lightbox.min.css">
+    <script type="text /javascript" src="./lightbox-plus-jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+<nav class=" nav container">
+            <a href="#" class="logo">Car <span>Rent</span> </a>
+            <ul class="navbar">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="cars.html">Cars</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="col-2">
+
+        <!-- <img src="img/banner.jpg" width="100%"> -->
+        <div class="h1">
+        </div>
+
+    </div>
+	
+	<h1>
+	Kia Rio
+	</h1>
+    
+	<p>
+        The S Technology Package provides advanced driver assistance technologies and premium services to keep you moving forward with confidence. Optional S Technology Package includes these features:
+    </p>
+
+    
+<div class="container">
+    <div class="gallery">
+        <a href="./car/k1.jpg"data-lightbox="myGallery">
+            <img src="./car/k1.jpg">
+        </a>
+        <a href="./car/k2.jpg"data-lightbox="myGallery">
+            <img src="./car/k2.jpg" >
+        </a>
+        <a href="./car/k3.jpg"data-lightbox="myGallery">
+            <img src="./car/k3.jpg" >
+        </a>
+       
+    </div>
+</div>
+
+	<table>
+	<tr>
+
+            <th>Daily rent</th>
+            <th>Reconstruction</th>
+            <th>Tax</th>
+           
+        </tr>
+        <tr>
+		<td>150.000 SP</td>
+		<td>1.500 SP</td>
+		<td>7.500 SP</td>
+		</tr>
+
+
+
+
+        
+	</table>
+
+    <input id='inpu' type="checkbox"> I agree to the terms </input>
+        <a href='home.html' class="button1">Back</a>
+        <button id="butt" onclick="showValidationForm()" class="button2">Next</button>
+        <input type="button" class="button">
+        <script>
+            let submitBtn = document.getElementById("button");
+            document.getElementById("button").addEventListener("click", function() {
+                if (this.checked) {
+                    submitBtn.disabled = false;
+                } else {
+                    submitBtn.disabled = true;
+                }
+            });
+
+            function showValidationForm() {
+                // Create a new form element
+                var form = document.createElement("form");
+
+                // Add a label and input field for the user's email address
+                var nameLabel = document.createElement("label");
+                nameLabel.innerHTML = "Name:";
+                form.appendChild(nameLabel);
+
+                var nameInput = document.createElement("input");
+                nameInput.type = "text";
+                nameInput.pattern = "[\u0621-\u064A ]+"; // Only accepts Arabic letters and spaces
+                nameInput.required = true;
+                nameInput.placeholder = "Enter your name in Arabic";
+                form.appendChild(nameInput);
+
+                var idLabel = document.createElement("label");
+                idLabel.innerHTML = "ID Number:";
+                form.appendChild(idLabel);
+
+                var hyphen = document.createElement("span");
+                hyphen.innerHTML = "-";
+                hyphen.style.margin = "0.1px";
+
+                var idInput = document.createElement("input");
+                idInput.type = "text";
+                idInput.pattern = "([0-9]{14}"; // Accepts 11-digit numbers with 2 leading digits from 01 to 14
+                idInput.required = true;
+                idInput.placeholder = "Gov Num"
+                idInput.maxLength = 13; //2 digits for hyphen and 11 digits for ID
+                idInput.style.width = "50px";
+                form.appendChild(idInput);
+                form.appendChild(hyphen); // Adds the hyphen separator to the form
+
+                var idInput2 = document.createElement("input");
+                idInput2.type = "text";
+                idInput2.pattern = "[0-9]{11}"; // Accepts 11-digit numbers
+                idInput2.required = true;
+                idInput2.placeholder = "ID Number"
+                idInput2.maxLength = 11;
+                idInput2.style.width = "210px";
+                form.appendChild(idInput2);
+
+
+                var dobLabel = document.createElement("label");
+                dobLabel.innerHTML = "Birth Date:";
+                form.appendChild(dobLabel);
+
+                var dobInput = document.createElement("input");
+                dobInput.type = "text";
+                dobInput.pattern = "([1-9]|[1-2][0-9]|3[0-1])-(0?[1-9]|1[0-2])-[0-9]{4}"; // Accepts dates in "dd-mm-yyyy" format with days from 1 to 31 and months from 1 to 12
+                dobInput.required = true;
+                dobInput.placeholder = "dd-mm-yyyy";
+                form.appendChild(dobInput);
+
+                var phoneLabel = document.createElement("label");
+                phoneLabel.innerHTML = "Phone Number:";
+                form.appendChild(phoneLabel);
+
+                var phoneInput = document.createElement("input");
+                phoneInput.type = "tel";
+                phoneInput.pattern = "09[0-9]{8}"; // Accepts 10-digit numbers that start with 09
+                phoneInput.required = true;
+                phoneInput.placeholder = "09********";
+                form.appendChild(phoneInput);
+
+                var emailLabel = document.createElement("label");
+                emailLabel.innerHTML = "Email:";
+                form.appendChild(emailLabel);
+
+                var emailInput = document.createElement("input");
+                emailInput.type = "email";
+                emailInput.name = "email";
+                emailInput.required = true;
+                emailInput.placeholder = "xyz@gmail.com";
+                form.appendChild(emailInput);
+
+
+
+                // Create label for date of birth field
+                var dobLabel = document.createElement("label");
+                dobLabel.innerHTML = " Rent Information:";
+                form.appendChild(dobLabel);
+
+                // Create checkbox for selecting date format
+                var dobFormatDiv = document.createElement("div");
+
+                var dobDayMonthYearLabel = document.createElement("label");
+                dobDayMonthYearLabel.innerHTML = "Day";
+                var dobDayMonthYearInput = document.createElement("input");
+                dobDayMonthYearInput.type = "radio";
+                dobDayMonthYearInput.name = "dobFormat";
+                dobDayMonthYearInput.value = "day_month_year";
+                dobDayMonthYearInput.checked = true;
+                dobDayMonthYearLabel.appendChild(dobDayMonthYearInput);
+                dobFormatDiv.appendChild(dobDayMonthYearLabel);
+
+                var dobMonthDayYearLabel = document.createElement("label");
+                dobMonthDayYearLabel.innerHTML = "Month";
+                var dobMonthDayYearInput = document.createElement("input");
+                dobMonthDayYearInput.type = "radio";
+                dobMonthDayYearInput.name = "dobFormat";
+                dobMonthDayYearInput.value = "month_day_year";
+                dobMonthDayYearLabel.appendChild(dobMonthDayYearInput);
+                dobFormatDiv.appendChild(dobMonthDayYearLabel);
+
+                var dobYearMonthDayLabel = document.createElement("label");
+                dobYearMonthDayLabel.innerHTML = "Year";
+                var dobYearMonthDayInput = document.createElement("input");
+                dobYearMonthDayInput.type = "radio";
+                dobYearMonthDayInput.name = "dobFormat";
+                dobYearMonthDayInput.value = "year_month_day";
+                dobYearMonthDayLabel.appendChild(dobYearMonthDayInput);
+                dobFormatDiv.appendChild(dobYearMonthDayLabel);
+
+                form.appendChild(dobFormatDiv);
+
+                // Create input field for integer number
+                var integerLabel = document.createElement("label");
+                integerLabel.innerHTML = "";
+                form.appendChild(integerLabel);
+
+                var integerInput = document.createElement("input");
+                integerInput.type = "number";
+                integerInput.required = true;
+                integerInput.placeholder = "Required Rental Number";
+                form.appendChild(integerInput);
+
+
+
+                // Create label for captcha field
+                var captchaLabel = document.createElement("label");
+                captchaLabel.innerHTML = " ";
+                form.appendChild(captchaLabel);
+
+                // Create input field for captcha
+                var captchaInput = document.createElement("input");
+                captchaInput.type = "text";
+                captchaInput.required = true;
+                captchaInput.placeholder = "Enter the captcha code";
+                form.appendChild(captchaInput);
+
+                // Generate random captcha code
+                var captchaCode = Math.floor(Math.random() * 10000) + 1;
+
+                // Create label for captcha code
+                var captchaCodeLabel = document.createElement("label");
+                captchaCodeLabel.innerHTML = "Captcha Code:" + captchaCode;
+                form.appendChild(captchaCodeLabel);
+
+                // Add event listener for form submission
+                form.addEventListener("submit", function(event) {
+                    // Prevent the form from submitting
+                    event.preventDefault();
+
+                    // Get the value entered in the email field
+                    var emailValue = emailInput.value;
+
+                    // Get the value entered in the captcha field
+                    var captchaValue = captchaInput.value;
+
+                    // Check if the captcha value matches the randomly generated captcha code
+                    if (captchaValue == captchaCode) {
+                        // Captcha code is valid, submit the form
+                        form.submit();
+                    } else {
+                        // Captcha code is invalid, show an error message
+                        alert("Captcha code is invalid");
+                        // Generate a new captcha code
+                        captchaCode = Math.floor(Math.random() * 10000) + 1;
+                        captchaCodeLabel.innerHTML = "captcha code:" + captchaCode;
+                        // Clear the captcha input field
+                        captchaInput.value = "";
+                    }
+                });
+
+
+
+                // Add a submit button
+                var submitButton = document.createElement("input");
+                submitButton.type = "submit";
+                submitButton.value = "Submit";
+                submitButton.onclick = alertFunction;
+                form.appendChild(submitButton);
+
+
+                document.body.appendChild(form);
+
+
+            }
+
+            function alertFunction() {alert('asdsada')}
+
+            
+        </script>
+</body>
+</html>
